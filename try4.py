@@ -16,13 +16,7 @@ rollNo=[]
 known_face_encodings=[]
 known_face_names=[]
 
-# def test2(x,y):
-#     src=x
-#     userName="dfds"
-#     dst= "Students/" + userName   
-#     shutil.copyfile('path/to/1.jpg', 'new/path/to/1.jpg')
-#     print(x)
-#     print(y)
+
 
 
 def copyImage(fileName,userName,userRollNo):
@@ -41,24 +35,7 @@ def copyImage(fileName,userName,userRollNo):
     csvFile.close()
     
 
-# def uploadImage(x):        
-    
-#     name=x
-#     if(rollNo.isnumeric() and name.isalpha()):        
-#         res = "Images Saved for rollNo : " + rollNo +" Name : "+ name
-#         row = [rollNo , name]
-#         with open('StudentDetails.csv','a+') as csvFile:
-#             writer = csv.writer(csvFile)
-#             writer.writerow(row)
-#         csvFile.close()
-#         # message.configure(text= res)
-#     else:
-#         if(rollNo.isnumberic()):
-#             res = "Enter Alphabetical Name"
-#             # message.configure(text= res)
-#         if(name.isalpha()):
-#             res = "Enter Numeric rollNo"
-#             # message.configure(text= res)
+
 
 # This is a demo of running face recognition on live video from your webcam. It's a little more complicated than the
 # other example, but it includes some basic performance tweaks to make things run a lot faster:
@@ -85,11 +62,7 @@ def keyPressEvent(self, e):
     
 def recognize():
     video_capture = cv2.VideoCapture(0)
-    ####
-    # Create a woorksheet
-    # book=Workbook()
-    # sheet=book.active
-    #####
+    
     df=pd.read_csv("StudentDetails.csv")
     # Load a sample picture and learn how to recognize it.
     for student in df.index:    
@@ -103,22 +76,9 @@ def recognize():
         encodingname = face_recognition.face_encodings(image)[0]
         known_face_encodings.append(encodingname)
 
-    # sagar_image = face_recognition.load_image_file("Students\sagar.jpg")
-    # sagar_face_encoding = face_recognition.face_encodings(sagar_image)[0]
+    
 
-    # Load a second sample picture and learn how to recognize it.
-    # biden_image = face_recognition.load_image_file("biden.jpg")
-    # biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
-
-    # Create arrays of known face encodings and their names
-
-    # known_face_encodings = [
-    #     sagar_face_encoding
-    #     # biden_face_encoding
-    # ]
-    # known_face_names = [
-    #     "sagar"
-    # ]
+    
 
     # Initialize some variables
     face_locations = []
@@ -130,12 +90,7 @@ def recognize():
     attendance = pd.DataFrame(columns = col_names)
     process_this_frame = True
 
-    ######
-    # Load present date and time
-    # now= datetime.datetime.now()
-    # today=now.day
-    # month=now.month
-    ######
+    
 
     while True:
         
