@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QWidget, QAction, QTabWidget, QVBoxLayout, QFileDialog, QLineEdit, QLabel
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import pyqtSlot
-from try4 import *  # recognize,openAttendence,upload
+from try4 import *  
 
 
 class App(QMainWindow):
@@ -16,7 +16,7 @@ class App(QMainWindow):
 		self.height = 200
 		self.setWindowTitle(self.title)
 		self.setGeometry(self.left, self.top, self.width, self.height)
-		# self.statusBar().showMessage()
+		
 
 		self.table_widget = MyTableWidget(self)
 		self.setCentralWidget(self.table_widget)
